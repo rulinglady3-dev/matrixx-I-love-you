@@ -307,3 +307,87 @@ canvas{
     opacity:1;
 
 }
+/* ========================= */
+/* IPAD RESPONSIVE DESIGN */
+/* ========================= */
+
+@media screen and (max-width: 1024px){
+
+    #questionBox{
+
+        width:92%;
+
+        max-width:760px;
+
+    }
+
+
+    #questionText{
+
+        font-size:42px;
+
+        line-height:1.2;
+
+        padding:0 20px;
+
+    }
+
+
+    #gameGif{
+
+        width:260px;
+
+        max-width:70vw;
+
+        margin:20px auto;
+
+    }
+
+
+    #gifMessage{
+
+        font-size:27px;
+
+        padding:0 25px;
+
+    }
+
+
+    .buttons{
+
+        gap:25px;
+
+    }
+
+
+    .imageBtn img{
+
+        width:250px;
+
+        max-width:38vw;
+
+    }
+
+
+    #noReaction{
+
+        font-size:25px;
+
+        padding:0 25px;
+
+    }
+
+
+    #nextScreen h1{
+
+        font-size:42px;
+
+        text-align:center;
+
+        padding:0 40px;
+
+        line-height:1.25;
+
+    }
+
+}
