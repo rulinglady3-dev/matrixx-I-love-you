@@ -578,6 +578,8 @@ function showQuestion(){
 
     noBtn.style.top="auto";
 
+    noTouchedOnce = false;
+
     setTimeout(()=>{
 
     questionBox.classList.add("showQuestionBox");
@@ -755,16 +757,36 @@ noBtn.addEventListener(
 
 /* iPad ve telefonda dokununca */
 
+let noTouchedOnce = false;
+
+
 noBtn.addEventListener(
     "touchstart",
     function(event){
 
         event.preventDefault();
 
-        moveNoButton();
+
+        /* İlk dokunuşta sadece kaç */
+
+        if(!noTouchedOnce){
+
+            noTouchedOnce = true;
+
+            moveNoButton();
+
+            return;
+
+        }
+
+
+        /* İkinci dokunuşta mesajı göster */
+
+        noBtn.click();
 
     }
 );
+
 const nextBtn = document.getElementById("nextBtn");
 
 nextBtn.onclick = function(){
