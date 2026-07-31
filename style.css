@@ -391,3 +391,71 @@ canvas{
     }
 
 }
+/* IPAD DİKEY EKRAN */
+
+@media screen and (max-width: 768px){
+
+    #questionBox{
+
+        width:95%;
+
+    }
+
+
+    #questionText{
+
+        font-size:36px;
+
+    }
+
+
+    #gameGif{
+
+        width:230px;
+
+        max-width:65vw;
+
+        margin:18px auto;
+
+    }
+
+
+    #gifMessage{
+
+        font-size:24px;
+
+    }
+
+
+    .buttons{
+
+        gap:18px;
+
+    }
+
+
+    .imageBtn img{
+
+        width:210px;
+
+        max-width:40vw;
+
+    }
+
+
+    #noReaction{
+
+        font-size:22px;
+
+    }
+
+
+    #nextScreen h1{
+
+        font-size:34px;
+
+        padding:0 30px;
+
+    }
+
+}
