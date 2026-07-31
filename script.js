@@ -762,4 +762,11 @@ if(q.noType==="crazy"){
 
 
 };
+const nextBtn = document.getElementById("nextBtn");
 
+nextBtn.onclick = function(){
+
+    window.location.href =
+    "BURAYA_YENİ_LİNKİNİ_YAZ";
+
+};
