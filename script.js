@@ -767,6 +767,6 @@ const nextBtn = document.getElementById("nextBtn");
 nextBtn.onclick = function(){
 
     window.location.href =
-    "BURAYA_YENİ_LİNKİNİ_YAZ";
+    "https://rulinglady3-dev.github.io/New-gif/";
 
 };
