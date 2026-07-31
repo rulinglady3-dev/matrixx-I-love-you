@@ -681,87 +681,90 @@ noReaction.style.opacity="0";
 };
 
 
-noBtn.onmouseenter=function(){
+function moveNoButton(){
+
+    let q = questions[questionIndex];
 
 
-let q = questions[questionIndex];
-
-
-
-if(q.noType==="jump"){
-
-
-    noBtn.style.transform =
-    "translateY(-40px)";
-
-
-    setTimeout(()=>{
+    if(q.noType === "jump"){
 
         noBtn.style.transform =
-        "translateY(0)";
+        "translateY(-40px)";
 
-    },300);
+        setTimeout(()=>{
 
+            noBtn.style.transform =
+            "translateY(0)";
 
-}
+        },300);
 
-
-
-if(q.noType==="run"){
-
-
-    noBtn.style.left =
-    Math.random()*70 + "%";
+    }
 
 
-    noBtn.style.top =
-    Math.random()*70 + "%";
+    if(q.noType === "run"){
+
+        noBtn.style.left =
+        Math.random()*70 + "%";
+
+        noBtn.style.top =
+        Math.random()*70 + "%";
+
+    }
 
 
-}
+    if(q.noType === "teleport"){
+
+        noBtn.style.left =
+        Math.random() *
+        (window.innerWidth-150)
+        +"px";
+
+        noBtn.style.top =
+        Math.random() *
+        (window.innerHeight-80)
+        +"px";
+
+    }
 
 
+    if(q.noType === "crazy"){
 
-if(q.noType==="teleport"){
+        noBtn.style.left =
+        Math.random()*80+"%";
 
+        noBtn.style.top =
+        Math.random()*80+"%";
 
-    noBtn.style.left =
-    Math.random() *
-    (window.innerWidth-150)
-    +"px";
+        noBtn.style.transform =
+        "rotate("+
+        Math.random()*360+
+        "deg) scale(1.2)";
 
-
-    noBtn.style.top =
-    Math.random() *
-    (window.innerHeight-80)
-    +"px";
-
-
-}
-
-
-
-if(q.noType==="crazy"){
-
-
-    noBtn.style.left =
-    Math.random()*80+"%";
-
-
-    noBtn.style.top =
-    Math.random()*80+"%";
-
-
-    noBtn.style.transform =
-    "rotate("+
-    Math.random()*360+
-    "deg) scale(1.2)";
-
+    }
 
 }
 
 
-};
+/* Bilgisayarda fare yaklaşınca */
+
+noBtn.addEventListener(
+    "mouseenter",
+    moveNoButton
+);
+
+
+/* iPad ve telefonda dokununca */
+
+noBtn.addEventListener(
+    "touchstart",
+    function(event){
+
+        event.preventDefault();
+
+        moveNoButton();
+
+    }
+);
 const nextBtn = document.getElementById("nextBtn");
 
 nextBtn.onclick = function(){
