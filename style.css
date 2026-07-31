@@ -1,0 +1,309 @@
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+body{
+
+    background:black;
+
+    overflow:hidden;
+
+}
+
+
+canvas{
+
+    display:block;
+
+}
+
+#gameScreen,
+#nextScreen{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background-image:url("images/background.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+
+    z-index:20;
+
+}
+
+#gameScreen::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.30);
+
+}
+
+#questionBox{
+
+    width:90%;
+    max-width:900px;
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+    opacity:0;
+    transform:translateY(80px) scale(.95);
+
+}
+
+
+#questionText{
+
+    font-family:Georgia;
+
+    font-size:50px;
+
+    color:#ff69b4;
+
+}
+
+
+
+#gameGif{
+
+    display:Block;
+
+    width:300px;
+
+    margin:25px auto;
+
+}
+
+#gifMessage{
+
+    color:#ffb6c1;
+
+    font-size:32px;
+
+    font-family:Georgia;
+}
+
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.imageBtn{
+    background:transparent;
+    border:none;
+    padding:0;
+    cursor:pointer;
+    position:relative;
+    transition:transform 0.2s ease;
+}
+
+.imageBtn img{
+    display:block;
+    width:320px;
+    height:auto;
+    image-rendering:pixelated;
+}
+
+.imageBtn:hover{
+    transform:scale(1.03);
+}
+
+#nextScreen h1{
+
+    color:#ff69b4;
+
+    font-family:Georgia;
+
+}
+
+#noReaction{
+
+    font-size:30px;
+
+    color:#ff69b4;
+
+    font-family:Georgia;
+
+    margin-top:20px;
+
+    opacity:0;
+
+    transition:0.5s;
+
+}
+/* ========================= */
+/* QUESTION INTRO ANIMATION  */
+/* ========================= */
+
+.showQuestionBox{
+
+    animation:questionIntro 1.2s forwards;
+
+}
+
+@keyframes questionIntro{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(80px)
+        scale(.95);
+
+    }
+
+
+    60%{
+
+        opacity:1;
+
+        transform:
+        translateY(-10px)
+        scale(1.02);
+
+    }
+
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+
+
+/* GIF */
+
+#gameGif{
+
+    display:block;
+
+    width:300px;
+
+    margin:25px auto;
+
+    opacity:0;
+
+    transform:scale(.8);
+
+}
+
+
+.showGif{
+
+    animation:gifIntro .8s forwards;
+
+}
+
+
+@keyframes gifIntro{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* BUTTONS */
+
+.buttons{
+
+    opacity:0;
+
+}
+
+
+.showButtons{
+
+    animation:buttonsIntro .8s forwards;
+
+}
+
+
+@keyframes buttonsIntro{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ========================= */
+/* HEART TO GAME TRANSITION  */
+/* ========================= */
+
+#gameScreen{
+
+    opacity:0;
+
+    transition:
+    opacity 1.2s ease;
+
+}
+
+
+#gameScreen.showGame{
+
+    opacity:1;
+
+}
