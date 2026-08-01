@@ -143,10 +143,25 @@ canvas{
 }
 
 .imageBtn img{
+
     display:block;
+
     width:320px;
+
+    max-width:38vw;
+
     height:auto;
-    image-rendering:pixelated;
+
+    image-rendering:auto;
+
+    object-fit:contain;
+
+    -webkit-transform:translateZ(0);
+
+    transform:translateZ(0);
+
+    backface-visibility:hidden;
+
 }
 
 .imageBtn:hover{
@@ -377,11 +392,15 @@ canvas{
 
     .imageBtn img{
 
-        width:250px;
+    width:250px;
 
-        max-width:38vw;
+    max-width:38vw;
 
-    }
+    height:auto;
+
+    image-rendering:auto;
+
+}
 
 
     #noReaction{
@@ -451,11 +470,15 @@ canvas{
 
     .imageBtn img{
 
-        width:210px;
+    width:210px;
 
-        max-width:40vw;
+    max-width:40vw;
 
-    }
+    height:auto;
+
+    image-rendering:auto;
+
+}
 
 
     #noReaction{
