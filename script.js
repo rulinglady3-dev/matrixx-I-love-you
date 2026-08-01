@@ -399,11 +399,14 @@ setTimeout(()=>{
 
 window.addEventListener("resize",()=>{
 
-    canvas.width=window.innerWidth;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    canvas.height=window.innerHeight;
-
+    /* Kalbin yeni ekran merkezini hesapla */
     createHeart();
+
+    /* Yağmuru yeni ekran genişliğine göre yeniden oluştur */
+    createRain();
 
 });
 
